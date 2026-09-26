@@ -1,0 +1,180 @@
+/* =========================================================
+   SeaLink - farmer.css
+   Farmer Specific Dashboard Styling
+   ========================================================= */
+
+.farmer-dashboard {
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.farmer-dashboard #manage-products {
+  scroll-margin-top: 130px;
+}
+
+.farmer-dashboard #manage-products:target {
+  border-color: var(--steel-blue);
+  box-shadow: 0 8px 22px rgba(100, 149, 237, 0.15);
+}
+
+.farmer-dashboard .manage-products-title {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  color: var(--text);
+}
+
+.farmer-dashboard .pill-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.farmer-dashboard .pill-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-navy);
+  background: var(--powder-blue);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+
+.farmer-dashboard .pill-btn:hover {
+  background: var(--light-sky-blue);
+  color: var(--dark-navy);
+}
+
+.farmer-dashboard .pill-btn.active {
+  background: var(--primary);
+  border-bottom: 3px solid var(--steel-blue);
+  color: var(--text-white);
+  box-shadow: 0 3px 8px rgba(100, 149, 237, 0.30);
+}
+
+.farmer-dashboard .mp-panel {
+  background: #f7fcfe;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.farmer-dashboard .mp-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.farmer-dashboard .mp-panel-head .left .h {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.farmer-dashboard .mp-panel-head .left .sub {
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.farmer-dashboard .mp-tablewrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.farmer-dashboard .product-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.farmer-dashboard .thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  flex: 0 0 auto;
+}
+
+.farmer-dashboard .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.farmer-dashboard .pid {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* =========================================================
+   Farmer Dashboard Mobile Scalability Rules
+   ========================================================= */
+@media (max-width: 768px) {
+  .farmer-dashboard .pill-row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    padding-bottom: 4px;
+  }
+  .farmer-dashboard .pill-row::-webkit-scrollbar {
+    display: none;
+  }
+  .farmer-dashboard .pill-btn {
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 7px 12px;
+    flex-shrink: 0;
+  }
+  .farmer-dashboard .mp-panel {
+    padding: 14px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .farmer-dashboard .manage-products-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .farmer-dashboard .mp-panel {
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .farmer-dashboard .mp-panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .farmer-dashboard .mp-panel-head .left .h {
+    font-size: 15px;
+  }
+  .farmer-dashboard .thumb {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+  .farmer-dashboard .product-cell {
+    gap: 8px;
+  }
+}

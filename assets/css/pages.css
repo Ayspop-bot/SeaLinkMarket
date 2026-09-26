@@ -1,0 +1,303 @@
+/* =========================================================
+   SeaLink Web Application - pages.css
+   Market, Cart, Checkout, Product Details, Payment Sections
+   ========================================================= */
+
+/* =========================
+   1) Market Toolbar & Filters
+   ========================= */
+.market-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.market-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.market-filters select,
+.market-filters input {
+  padding: 10px 14px;
+  border: 1px solid var(--powder-blue);
+  border-radius: 10px;
+  background: var(--surface);
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+}
+
+.market-filters select:focus,
+.market-filters input:focus {
+  border-color: var(--primary);
+  box-shadow: var(--focus-glow);
+}
+
+/* =========================
+   2) Product Detail Page
+   ========================= */
+.detail-wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 860px) {
+  .detail-wrap { grid-template-columns: 1fr; }
+}
+
+.detail-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.qty-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.qty-row input {
+  width: 110px;
+  padding: 10px;
+  border: 1px solid var(--powder-blue);
+  border-radius: 10px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* =========================
+   3) Shopping Cart & Checkout UI
+   ========================= */
+.cart-badge {
+  background: var(--primary); /* Cornflower Blue #6495ED */
+  color: var(--text-white);
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cart-item-row:nth-child(even) {
+  background: var(--bg); /* Alternating Alice Blue #F0F8FF */
+}
+
+.cart-item-row:nth-child(odd) {
+  background: var(--surface);
+}
+
+.cart-total-section {
+  background: var(--steel-blue); /* Cart Total Section: Steel Blue #4682B4 */
+  color: var(--text-white);       /* White text */
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-progress {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--powder-blue) 0%, var(--primary) 50%, var(--steel-blue) 100%);
+  margin: 16px 0;
+}
+
+.order-summary-box {
+  background: var(--surface);
+  border: 2px solid var(--border-light); /* Light Cyan Border #E0FFFF / Powder Blue */
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+/* =========================
+   4) Payment Section (GCash & Cash on Delivery)
+   ========================= */
+.payment-card {
+  background: var(--surface);
+  border: 2px solid var(--light-steel-blue); /* Unselected: Light Steel border #B0C4DE */
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.payment-card.selected {
+  background: var(--bg);                  /* Selected: Alice Blue #F0F8FF */
+  border-color: var(--primary);            /* Selected: Cornflower border #6495ED */
+  box-shadow: 0 4px 14px rgba(100, 149, 237, 0.25);
+}
+
+.gcash-upload-box {
+  background: #f7fcfe;
+  border: 2px dashed var(--powder-blue);   /* GCash Upload Box: Powder Blue #B0E0E6 dashed */
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.gcash-upload-box.has-file {
+  background: #D4EDDA;                     /* File Added: Light Green #D4EDDA */
+  border: 2px solid #28a745;
+  color: #155724;
+}
+
+.cod-badge {
+  background: #FFF3CD;                     /* COD Badge: #FFF3CD light yellow */
+  color: #856404;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================
+   5) Profile UI Accents
+   ========================= */
+.profile-card-top-banner {
+  border-top: 6px solid var(--primary);    /* Cornflower Blue top banner */
+}
+
+.verified-badge {
+  background: #28A745;
+  color: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pending-badge {
+  background: #FFC107;
+  color: var(--dark-navy);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.profile-progress-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--steel-blue) 100%);
+}
+
+/* =========================================================
+   Pages Responsive Scalability & Readability Rules
+   ========================================================= */
+@media (max-width: 768px) {
+  .market-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .market-filters {
+    width: 100%;
+  }
+  .market-filters select,
+  .market-filters input {
+    flex: 1;
+    min-width: 140px;
+  }
+  .cart-total-section {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-total-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    text-align: center;
+    padding: 12px 14px;
+  }
+  .cart-total-section > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-image {
+    border-radius: 12px;
+  }
+  .qty-row {
+    gap: 8px;
+  }
+  .qty-row input {
+    width: 75px;
+    padding: 8px 6px;
+    font-size: 14px;
+  }
+  .order-summary-box {
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+  .payment-card {
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+  .gcash-upload-box {
+    padding: 16px 12px;
+    border-radius: 10px;
+    font-size: 12.5px;
+  }
+  .market-filters select,
+  .market-filters input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  #checkoutBtn {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 11px 16px !important;
+    font-size: 14.5px !important;
+    text-align: center;
+    justify-content: center;
+  }
+  .order-summary-row {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+  }
+  .order-summary-row > div:last-child {
+    margin-left: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 1px dashed var(--border);
+    padding-top: 8px;
+    width: 100%;
+  }
+}

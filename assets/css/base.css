@@ -1,0 +1,182 @@
+/* =========================================================
+   SeaLink Web Application - base.css
+   Color System & Typography System based on UI Design Specification
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 1. Page Backgrounds */
+  --bg:               #F0F8FF; /* Alice Blue */
+  --bg-alt:           #E0FFFF; /* Light Cyan */
+  --surface:          #FFFFFF; /* Pure White Card/Container Background */
+
+  /* 2. Brand & Header Palette */
+  --primary:          #6495ED; /* Cornflower Blue */
+  --primary-hover:    #4a7bd4; /* 15% Darker */
+  --sky-blue:         #87CEEB; /* Sky Blue */
+  --light-sky-blue:   #87CEFA; /* Light Sky Blue */
+  --powder-blue:      #B0E0E6; /* Powder Blue */
+  --steel-blue:       #4682B4; /* Steel Blue */
+  --dark-navy:        #1B3A5C; /* Dark Navy Blue */
+  --ocean-blue:       #2E86AB; /* Ocean Blue */
+  --deep-cerulean:    #1B6CA8; /* Deep Cerulean */
+  --cadet-blue:       #5F9EA0; /* Cadet Blue */
+  --dark-sky-blue:    #4C7A96; /* Dark Sky Blue */
+  --beau-blue:        #BCD4E6; /* Beau Blue */
+  --light-steel-blue: #B0C4DE; /* Light Steel Blue */
+  --gray-blue:        #5A7A8A; /* Gray Blue */
+
+  /* Text Colors */
+  --text:             #1B3A5C; /* Dark Navy Main Text */
+  --text-dark:        #152525; /* Very Dark Text */
+  --text-white:       #FFFFFF; /* White Text */
+  --muted:            #5A7A8A; /* Gray Blue Muted Text */
+  --border:           #B0E0E6; /* Powder Blue Default Border */
+  --border-light:     #E0FFFF; /* Light Cyan Border */
+  --border-subtle:    #F0F8FF; /* Alice Blue Subtle Border */
+
+  /* Shadows */
+  --card-shadow:      0 4px 16px rgba(135, 206, 235, 0.30);
+  --card-shadow-hover:0 8px 24px rgba(100, 149, 237, 0.35);
+  --widget-shadow:    0 6px 18px rgba(70, 130, 180, 0.20);
+  --focus-glow:       0 0 0 3px rgba(100, 149, 237, 0.35);
+
+  /* Typography Font Families */
+  --font-primary:     'Poppins', sans-serif;
+  --font-secondary:   'Nunito', sans-serif;
+}
+
+body {
+  font-family: var(--font-secondary);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  color: var(--text);
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+h1, .page-title {
+  font-size: 28px;
+  font-weight: 700; /* Poppins Bold 700 28px - 32px */
+  margin-bottom: 8px;
+}
+
+h2, .section-title {
+  font-size: 22px;
+  font-weight: 600; /* Poppins SemiBold 600 22px - 26px */
+  margin-bottom: 8px;
+}
+
+h3, .card-title {
+  font-size: 18px;
+  font-weight: 600; /* Poppins SemiBold 600 18px - 20px */
+  margin-bottom: 6px;
+}
+
+p, li {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-weight: 400; /* Nunito Regular 400 16px - 18px */
+}
+
+small, .small-muted, .caption {
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+label {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+a {
+  color: var(--deep-cerulean);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* =========================================================
+   Mobile Scalability & Responsive Typography Breakpoints
+   ========================================================= */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+    line-height: 1.48;
+  }
+  h1, .page-title {
+    font-size: 24px;
+  }
+  h2, .section-title {
+    font-size: 20px;
+  }
+  h3, .card-title {
+    font-size: 17px;
+  }
+  p, li {
+    font-size: 15px;
+  }
+  .container {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14.5px;
+    line-height: 1.45;
+  }
+  h1, .page-title {
+    font-size: 21px;
+    letter-spacing: -0.2px;
+  }
+  h2, .section-title {
+    font-size: 18px;
+  }
+  h3, .card-title {
+    font-size: 16px;
+  }
+  p, li {
+    font-size: 14px;
+  }
+  small, .small-muted, .caption {
+    font-size: 12px;
+  }
+  label {
+    font-size: 13px;
+  }
+  .container {
+    padding: 10px 12px;
+  }
+}
